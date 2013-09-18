@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title data-l10n-id="ffos-tester">XML-RPC Tester</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+  	<section>
+	    <!-- Write your application here -->
+	    <h1 data-l10n-id="ffos-tester">XML-RPC Tester</h1>
+	    
+	    <h3>Credentials</h3>
+	    <input id="username" type="text" placeholder="username">
+	    <input id="password" type="password" placeholder="password">
+	    <input id="site-url" type="text" placeholder="site url" >
+	    <input id="blog-id" type="text" placeholder="blog id" >
+	    <button id="blogInfo">Blog Info</button>
+	    <button id="posts">Posts</button>
+
+		<textarea id="results"></textarea>
+
+  	</section>
+  	<script type="text/javascript" src="xmlrpcservice.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "name": "WP XMLRPC Tester",
+  "description": "A basic testing harness for XML-RPC requests.",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/icons/mortar-16.png",
+    "48": "/icons/mortar-48.png",
+    "128": "/icons/mortar-128.png"
+  },
+  "developer": {
+    "name": "Eric",
+    "url": "http://github.com/aerych/"
+  },
+  "installs_allowed_from": ["*"],
+  "permissions": {
+	"systemXHR": {"description":"Required for remote syncing via XMLRPC."}
+  },
+  "type": "privileged",
+  "locales": {
+    "en-US": {
+      "name": "Tester",
+      "description": "Tester"
+      }
+  },
+  "orientation": "portrait-primary",
+  "default_locale": "en-US"
+}
