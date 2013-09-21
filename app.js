@@ -55,8 +55,22 @@ function makeRequest(url, data) {
 function handleSuccess(xhr) {
 	document.getElementById("results").innerHTML = xhr.responseText;
 
-	var json = XMLRPCParser.parse(xhr.response);
-	console.log(json);
+	var parser = new XMLRPCParser(xhr.response);
+	var json = parser.toObject();
+	var fault = parser.fault;
+	console.log(fault);
+
+	if (json instanceof Array) {
+		for (var i = 0; i < json.length; i++) {
+			var obj = json[i];
+			for(var key in obj) {
+				console.log(key, obj[key]);
+			}
+		}
+	} else {
+		 console.log(json);
+	}
+	
 }
 
 
