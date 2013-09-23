@@ -7,6 +7,9 @@ document.getElementById("posts").addEventListener("click", function(){
 	getPosts();
 });
 
+document.getElementById("new-post").addEventListener("click", function(){
+	newPost();
+});
 
 function getBlogInfo () {
 	var url = document.getElementById('site-url').value;
@@ -28,6 +31,27 @@ function getPosts () {
 	var xmlrpc_data =  XMLRPCBuilder.marshal("wp.getPosts", params);
 	
 	makeRequest(url, xmlrpc_data);
+}
+
+
+function newPost() {
+	var url = document.getElementById('site-url').value;
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	var blogId = document.getElementById("blog-id").value;
+
+	var post_title = document.getElementById("post-title").value;
+	var post_content = document.getElementById("post-content").value;	
+	
+	var content = {
+		"post_title": post_title,
+		"post_content" : post_content
+	};
+
+	var params = [blogId, username, password, content];
+	var xmlrpc_data =  XMLRPCBuilder.marshal("wp.newPost", params);
+	
+	makeRequest(url, xmlrpc_data);		
 }
 
 
